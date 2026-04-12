@@ -1,7 +1,7 @@
 import type { Filters, Theme, Todo } from "../types";
 import { v4 as uuid } from 'uuid';
 
-// Acciones del todo
+// Acciones de Todo
 export type TodoActions =
         { type: "add-todo"; payload: { text: string } } |
         { type: "update-todo"; payload: { todo: Todo } } |
@@ -55,7 +55,9 @@ export const todoReducer = (
             todo: state.todo.map((todos) => todos.id === action.payload.todo.id
                 ? action.payload.todo
                 : todos),
-            modal: true,
+            // Cierra el modal cuando el ToDo ya esta actualizado
+            modal: false,
+            // Reinicia el todo en edición, ya que la actualización ha sido completada
            editingTodo: ''
         }
     }

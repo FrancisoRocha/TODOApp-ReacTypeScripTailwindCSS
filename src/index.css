@@ -1,1 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import 'tailwindcss';
+
+@theme {
+    --font-josefin: 'Josefin Sans', sans-serif;
+
+    /* Light Theme */
+
+    --gray-50: hsl(0, 0%, 98%);
+    --purple-light-300: hsl(234, 39%, 85%);
+    --gray-300: hsl(233, 11%, 84%);
+    --gray-light-600: hsl(236, 9%, 61%);
+    --navy-850: hsl(235, 19%, 35%);
+
+    /* Dark Theme */
+
+    --navy-950: hsl(235, 21%, 11%);
+    --navy-900: hsl(235, 24%, 19%);
+    --purple-dark-300: hsl(234, 39%, 85%);
+    --purple-100-hover: hsl(236, 33%, 92%);
+    --purple-600: hsl(235, 16%, 43%);
+    --purple-700: hsl(233, 14%, 35%);
+    --purple-800: hsl(237, 14%, 26%);
+    --gray-dark-600: hsl(236, 9%, 61%);
+
+
+    /* Filters */
+    --blue-500: hsl(220, 98%, 61%);
+
+}
+
+body.light {
+    --color-bg: var(--gray-50);
+    --bg-color: #ffffff;
+    --color-text: var(--navy-850);
+    --color-input-placeholder: var(--gray-light-600);
+    --color-text-checked: var(--gray-300);
+    --border-line: var(--purple-light-300);
+    --animate-bg: var(--gray-light-600);
+}
+
+body.dark{
+    --color-bg: var(--navy-950);
+    --bg-input: var(--navy-900);
+    --color-placerholder: var(--gray-dark-600);
+    --color-text: var(--purple-100-hover);
+    --border-line: var(--purple-800);
+    --color-checked: var(--purple-700);
+    --color-filters: var(--purple-600);
+}
+
+
+@layer base{
+    body.light{
+        background-color: var(--color-bg);
+    }
+    body.dark{
+        background-color: var(--color-bg);
+    }
+}
