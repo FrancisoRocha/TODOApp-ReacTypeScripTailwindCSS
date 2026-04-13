@@ -28,14 +28,14 @@ export default function Header() {
     return (
         <>
             <div
-                className={`w-full bg-cover bg-no-repeat h-52 md:h-80 px-6 md:px-12
+                className={`mx-auto w-full h-52 md:h-80 bg-cover bg-no-repeat px-6 md:px-12
                     ${state.tema === 'light'
                         ? 'bg-[url("/images/bg-mobile-light.jpg")] md:bg-[url("/images/bg-desktop-light.jpg")]'
                         : 'bg-[url("/images/bg-mobile-dark.jpg")] md:bg-[url("/images/bg-desktop-dark.jpg")]'}`
                 }
 
             >
-                <div className="flex items-center justify-evenly mx-auto h-full">
+                <div className="max-w-2xl mx-auto px-6 md:px-12 flex items-center justify-between h-full">
                     <h1 className="text-3xl text-white font-bold font-josefin uppercase tracking-[0.5em]">
                         Todo
                     </h1>

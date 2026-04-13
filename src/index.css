@@ -9,8 +9,9 @@
     --gray-50: hsl(0, 0%, 98%);
     --purple-light-300: hsl(234, 39%, 85%);
     --gray-300: hsl(233, 11%, 84%);
-    --gray-light-600: hsl(236, 9%, 61%);
+    --gray-600: hsl(236, 9%, 61%);
     --navy-850: hsl(235, 19%, 35%);
+    --checkbox-border: hsl(234, 39%, 85%);
 
     /* Dark Theme */
 
@@ -21,32 +22,42 @@
     --purple-600: hsl(235, 16%, 43%);
     --purple-700: hsl(233, 14%, 35%);
     --purple-800: hsl(237, 14%, 26%);
-    --gray-dark-600: hsl(236, 9%, 61%);
+    --gray-600: hsl(236, 9%, 61%);
+    --checkbox-border: hsl(237, 14%, 26%);
 
 
     /* Filters */
     --blue-500: hsl(220, 98%, 61%);
 
+    /* CheckBokx Gradiente */
+    --border-gradient: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
 }
 
 body.light {
     --color-bg: var(--gray-50);
-    --bg-color: #ffffff;
+    --bg-input: #ffffff;
     --color-text: var(--navy-850);
-    --color-input-placeholder: var(--gray-light-600);
-    --color-text-checked: var(--gray-300);
+    --color-placerholder: var(--gray-600);
     --border-line: var(--purple-light-300);
-    --animate-bg: var(--gray-light-600);
+    --color-checked: var(--gray-300);
+    --color-filters: var(--gray-600);
+    --filter-active: var(--blue-500);
+    --checkbox: var(--checkbox-border);
+    --checkbox-checked: var(--border-gradient);
 }
 
 body.dark{
     --color-bg: var(--navy-950);
     --bg-input: var(--navy-900);
-    --color-placerholder: var(--gray-dark-600);
     --color-text: var(--purple-100-hover);
+    --color-placerholder: var(--gray-600);
     --border-line: var(--purple-800);
     --color-checked: var(--purple-700);
     --color-filters: var(--purple-600);
+    --filter-active: var(--blue-500);
+    --checkbox: var(--checkbox-border);
+    --checkbox-checked: var(--border-gradient);
 }
 
 

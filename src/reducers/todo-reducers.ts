@@ -1,5 +1,6 @@
 import type { Filters, Theme, Todo } from "../types";
 import { v4 as uuid } from 'uuid';
+import { arrayMove } from "@dnd-kit/sortable";
 
 // Acciones de Todo
 export type TodoActions =
@@ -9,9 +10,8 @@ export type TodoActions =
         { type: "complete-todo"; payload: { id: Todo['id'] } } |
         { type: "set-filter"; payload: { filter: Filters } } |
         { type: "set-theme"; payload: { tema: Theme } } |
-        { type: 'show-modal' } |
-        { type: 'close-modal' } |
-        { type: "clear-completed" }
+        { type: "clear-completed" } |
+        { type: 'reorder-todo'; payload: { sourceIndex: number, destinationIndex: number } }
 
 // Estado del todo
 export type TodoState = {
@@ -86,7 +86,6 @@ export const todoReducer = (
         return {
             ...state,
             filter: action.payload.filter
-
         }
     }
 
@@ -98,27 +97,20 @@ export const todoReducer = (
         }
     }
 
-    // Mostrar Modal
-    if (action.type === 'show-modal') {
-        return {
-            ...state,
-            modal: true
-        }
-    }
-
-    // Ocultar Modal
-    if (action.type === 'close-modal') {
-        return {
-            ...state,
-            modal: false
-        }
-    }
-
     // Eliminar los Completados
     if (action.type === 'clear-completed') {
         return {
             ...state,
             todo: state.todo.filter((todos) => !todos.completed)
+        }
+    }
+
+    // Reordenar TODO
+    if (action.type === 'reorder-todo') {
+
+        return {
+            ...state,
+            todo: arrayMove(state.todo, action.payload.sourceIndex, action.payload.destinationIndex)
         }
     }
 
